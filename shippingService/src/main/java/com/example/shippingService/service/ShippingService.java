@@ -26,7 +26,10 @@ public class ShippingService {
         return repository.findAll();
     }
 
-    
+    public Shipping getByOrderId(Long orderId) {
+        return repository.findByOrderId(orderId);
+    }
+
     public Shipping updateStatusByOrderId(Long orderId, String status) {
         Shipping s = repository.findByOrderId(orderId);
 

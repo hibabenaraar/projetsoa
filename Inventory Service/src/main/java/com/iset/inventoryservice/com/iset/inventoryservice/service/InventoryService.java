@@ -23,6 +23,10 @@ public class InventoryService {
         return repository.findAll();
     }
 
+    public Product getProductByName(String productName) {
+        return repository.findByProductName(productName);
+    }
+
     // verifier stock
     public Boolean checkStock(String productName, Integer qty) {
 

@@ -33,6 +33,10 @@ public class GatewayConfig {
                 .and(route("r5")
                         .route(path("/api/currency/**"), http())
                         .before(uri("http://localhost:8082/"))
+                        .build())
+                .and(route("r6")
+                        .route(path("/billing/**").or(path("/billing")), http())
+                        .before(uri("http://localhost:8092/"))
                         .build());
     }
     

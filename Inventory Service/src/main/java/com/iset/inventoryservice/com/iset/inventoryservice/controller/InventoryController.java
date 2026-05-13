@@ -3,6 +3,7 @@ package com.iset.inventoryservice.com.iset.inventoryservice.controller;
 import com.iset.inventoryservice.com.iset.inventoryservice.entity.Product;
 import com.iset.inventoryservice.com.iset.inventoryservice.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +26,15 @@ public class InventoryController {
     @GetMapping
     public List<Product> getAllProducts() {
         return service.getAllProducts();
+    }
+
+    @GetMapping("/product/{productName}")
+    public ResponseEntity<Product> getProductByName(@PathVariable String productName) {
+        Product product = service.getProductByName(productName);
+        if (product == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(product);
     }
 
     // verifier stock

@@ -1,0 +1,8 @@
+# Java
+target/
+
+# Node.js
+node_modules/
+
+# Env files
+.env

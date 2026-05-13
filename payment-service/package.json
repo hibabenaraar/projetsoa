@@ -1,0 +1,21 @@
+{
+  "name": "payment-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Microservice de paiement Stripe - Sujet 4 SOA",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "eureka-js-client": "^4.5.0",
+    "express": "^5.2.1",
+    "stripe": "^22.0.2"
+  }
+}
